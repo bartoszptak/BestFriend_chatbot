@@ -70,7 +70,7 @@ class Engine:
     def get_translator(self, text, dest):
         return [(State.TEXT, self.translator.translate(text, dest=dest).text)]
 
-    def get_youtube(self, text):
+    def get_youtube(self, textToSearch):
         query = urllib.parse.quote(textToSearch)
         url = "https://www.youtube.com/results?search_query=" + query
         response = urllib.request.urlopen(url)
