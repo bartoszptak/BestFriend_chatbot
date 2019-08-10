@@ -21,7 +21,7 @@ def send(chat_id, state, value):
         else:
             bot.sendMessage(chat_id=chat_id, text=value)
     except:
-        bot.sendMessage(chat_id=chat_id, text='Coś poszło nie tak :(k')
+        bot.sendMessage(chat_id=chat_id, text='Coś poszło nie tak :(')
 
 
 @app.route('/{}'.format(TOKEN), methods=['POST'])
@@ -36,6 +36,8 @@ def respond():
 
     if text == "/start":
             answer = engine.get_welcome()
+    elif text[:6] == "/pomoc":
+            answer = engine.get_help()
     elif text[:6] == "/wiki ":
             answer = engine.get_wikipedia(text[5:])
     elif text[:4] == '/tr ':

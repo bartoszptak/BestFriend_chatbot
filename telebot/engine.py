@@ -27,9 +27,21 @@ class Engine:
     def get_welcome(self):
         bot_welcome = """
         Cześć! Pisz śmiało, spróbuję dotrzymać Ci towarzystwa ;)
+        Jeśli potrzebujesz pomocy, zawołaj mnie przez /pomoc
         """
 
         return [(State.TEXT, bot_welcome)]
+
+    def get_help(self):
+        bot_help = """
+        Na razie pomogę ci w poniższych zadaniach:
+        - /wiki <HASŁO> - przeszukuję wikipedię dla ciebie
+        - /tr <HASŁO> - przetłumaczę tobie na polski
+        - /tr <HASŁO> - przetłumaczę tobie na angielski
+        - /pogoda <MIASTO> - powiem ci czy warto założyć kurtkę
+        """
+
+        return [(State.TEXT, bot_help)]       
 
     def get_wikipedia(self, text):
         answer = []
