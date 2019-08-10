@@ -38,8 +38,8 @@ class Engine:
         bot_help = """
         Na razie pomogę ci w poniższych zadaniach:
         - /wiki <HASŁO> - przeszukuję wikipedię dla Ciebie
-        - /tr <HASŁO> - przetłumaczę Tobie na polski
-        - /tr <HASŁO> - przetłumaczę Tobie na angielski
+        - /tr <TEKST> - przetłumaczę Tobie na polski
+        - /tra <TEKST> - przetłumaczę Tobie na angielski
         - /pogoda <MIASTO> - powiem Ci czy warto założyć kurtkę
         - /yt <HASŁO> - dam Ci pierwszy link z Youtube, który znajdę
         """
