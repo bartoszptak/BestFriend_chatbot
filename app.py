@@ -1,7 +1,7 @@
 import re
 from flask import Flask, request
 import telegram
-from telebot.credentials import BOT_TOKEN, bot_user_name, URL
+from telebot.credentials import BOT_TOKEN, BOT_USER_NAME, BOT_URL
 from telebot.engine import Engine, State
 
 global bot
