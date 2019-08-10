@@ -33,4 +33,3 @@ matplotlib
 numpy
 Pillow
 bs4
-urllib
