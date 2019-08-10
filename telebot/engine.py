@@ -6,6 +6,7 @@ import unidecode
 import pyowm
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import requests
+import urllib.request
 from bs4 import BeautifulSoup
 from io import BytesIO
 import tempfile
