@@ -37,10 +37,11 @@ class Engine:
     def get_help(self):
         bot_help = """
         Na razie pomogę ci w poniższych zadaniach:
-        - /wiki <HASŁO> - przeszukuję wikipedię dla ciebie
-        - /tr <HASŁO> - przetłumaczę tobie na polski
-        - /tr <HASŁO> - przetłumaczę tobie na angielski
-        - /pogoda <MIASTO> - powiem ci czy warto założyć kurtkę
+        - /wiki <HASŁO> - przeszukuję wikipedię dla Ciebie
+        - /tr <HASŁO> - przetłumaczę Tobie na polski
+        - /tr <HASŁO> - przetłumaczę Tobie na angielski
+        - /pogoda <MIASTO> - powiem Ci czy warto założyć kurtkę
+        - /yt <HASŁO> - dam Ci pierwszy link z Youtube, który znajdę
         """
 
         return [(State.TEXT, bot_help)]       
