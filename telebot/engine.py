@@ -6,6 +6,7 @@ import unidecode
 import pyowm
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import requests
+from bs4 import BeautifulSoup
 from io import BytesIO
 import tempfile
 
@@ -68,6 +69,19 @@ class Engine:
     def get_translator(self, text, dest):
         return [(State.TEXT, self.translator.translate(text, dest=dest).text)]
 
+    def get_youtube(self, text):
+        query = urllib.parse.quote(textToSearch)
+        url = "https://www.youtube.com/results?search_query=" + query
+        response = urllib.request.urlopen(url)
+        html = response.read()
+        soup = BeautifulSoup(html, 'html.parser')
+        for vid in soup.findAll(attrs={'class':'yt-uix-tile-link'}):
+            if not vid['href'].startswith("https://googleads.g.doubleclick.net/") and \
+                '&list' not in vid['href']:
+                return [(State.TEXT, 'https://www.youtube.com' + vid['href'])]
+        
+        return [(State.ERROR, 'Sorka, ale nie znalazłem tego hasła')]
+
     def get_weather(self, city):
         _city = unidecode.unidecode(city)
         obs = self.owm.weather_at_place(_city).get_weather()
@@ -80,8 +94,7 @@ class Engine:
         ico = ico.resize((100, 100))
 
         draw  =  ImageDraw.Draw(img)
-        city = city[0].upper()+city[1:]
-        city = city.split()[0]
+        city = city.title().split()[0]
         draw.text((30,30), city, font=unicode_font, fill=(255,255,255))
         draw.text((30,80), '{}°C'.format(obs.get_temperature('celsius')['temp']), font=unicode_font, fill=(255,255,255))
         img.paste(ico,(300,25))

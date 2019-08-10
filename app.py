@@ -44,6 +44,8 @@ def respond():
         answer = engine.get_translator(text[4:], 'pl')
     elif text[:5] == '/tra ':
         answer = engine.get_translator(text[5:], 'en')
+    elif text[:4] == '/yt ':
+        answer = engine.get_youtube(text[4:])
     elif text[:8] == '/pogoda ':
         answer = engine.get_weather(text[8:])
     else:
