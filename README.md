@@ -1,5 +1,5 @@
 # BestFriend - Telegram bot
-A telegram bot built in Python and Flask, launched on Heroku.com. The native language that the bot supports is Polish. I will send the bot link to the e-mail request due to limitations related to queries.
+A telegram bot built in Python and Flask, Docker, launched on Heroku.com. The native language that the bot supports is Polish. I will send the bot link to the e-mail request due to limitations related to queries.
 
 ## Use cases
 * `/start` - welcome message  
